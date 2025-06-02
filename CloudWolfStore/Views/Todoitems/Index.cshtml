@@ -1,0 +1,43 @@
+
+@model List<TodoItem>
+
+@{
+    ViewData["Title"] = "List Items";
+}
+
+
+<br>
+
+<div class="row">
+    <div class="col md-12"> 
+     <a asp-action="Create" asp-controller="Todoitems" class="btn btn-success">Create</a>
+    </div>
+</div>
+
+<div class="row">
+ <div class="col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+            <td> ID </td>
+            <td> Name </td>
+            <td> Table Ready </td>
+            <td> Description  </td>
+            </tr>
+        </thead>
+        <tbody>
+              @foreach(var item in Model)
+              {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.TableReady</td>
+                    <td>@item.Description</td>
+                </tr>
+
+              }
+        </tbody>
+    </table>
+ </div>
+
+</div>

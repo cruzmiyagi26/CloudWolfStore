@@ -1,0 +1,39 @@
+
+@model TodoItem
+
+@{
+    ViewData["Title"] = "Adding Items";
+}
+
+<form asp-action="CreateItem" asp-asp-controller="Todoitems" method="post">
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="form-group">
+            <label>ID</label>
+            <input asp-for="Id" type="=text" class="form-control" required>
+        </div>
+          <div class="form-group"></div>
+            <label>Name</label>
+            <input asp-for="Name" type="=text" class="form-control" required>
+        </div>
+          <div class="form-group"></div>
+            <label>TableReady</label>
+            <input asp-for="TableReady" type="=text" class="form-control" required>
+        </div>
+          <div class="form-group"></div>
+            <label>Description</label>
+            <input asp-for="Description" type="=text" class="form-control" required>
+        </div>
+
+        <div class="form-group"></div>
+             <div asp-validation-summary="All" class="text-danger" > </div>
+        </div>
+          <div class="card-footer"></div>
+          <center>
+            <button type="submit" class="btn btn-primary">Create Item</button>
+            <a asp-action="Index" asp-asp-controller="TodoItems" class="btn btn-secondary" ></a>
+          </center>
+           
+        </div>
+    </div>
+</form>
